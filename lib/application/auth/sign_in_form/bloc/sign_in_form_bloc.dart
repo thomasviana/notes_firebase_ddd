@@ -12,11 +12,38 @@ part 'sign_in_form_state.dart';
 
 class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   final IAuthFacade _authFacade;
+
   SignInFormBloc(
     this._authFacade,
   ) : super(SignInFormState.initial()) {
-    on<SignInFormEvent>((event, emit) {
-      // TODO: implement event handler
+    on<SignInFormEvent>((event, emit) async {
+      event.map(
+        emailChanged: (e) async* {
+          emit(state.copyWith(
+            emailAddress: EmailAddress(e.emailString),
+            authFailureOrSuccessOption: none(),
+          ));
+        },
+        passwordChanged: (e) async* {
+          emit(state.copyWith(
+            password: Password(e.passwordString),
+            authFailureOrSuccessOption: none(),
+          ));
+        },
+        registerWithEmailAndPasswordPressed: (e) async* {},
+        signInWithEmailAndPasswordPressed: (e) async* {},
+        signInWithGooglePressed: (e) async* {
+          emit(state.copyWith(
+            isSubmitting: true,
+            authFailureOrSuccessOption: none(),
+          ));
+          final failureOrSuccess = await _authFacade.signInWithGoogle();
+          emit(state.copyWith(
+            isSubmitting: false,
+            authFailureOrSuccessOption: some(failureOrSuccess),
+          ));
+        },
+      );
     });
   }
 }
