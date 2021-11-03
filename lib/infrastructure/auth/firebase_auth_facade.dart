@@ -84,8 +84,11 @@ class FirebaseAuthFacade implements IAuthFacade {
   @override
   Future<Option<UserEntity>> getSignedUser() {
     final user = _firebaseAuth.currentUser;
-    final result = some(UserEntity(id: UniqueId.fromUniqueString(user!.uid)));
-    return Future.value(result);
+    if (user != null) {
+      final result = some(UserEntity(id: UniqueId.fromUniqueString(user.uid)));
+      return Future.value(result);
+    }
+    return Future.value(none());
   }
 
   @override

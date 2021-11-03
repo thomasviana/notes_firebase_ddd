@@ -1,8 +1,9 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:dartz/dartz.dart';
-import 'errors.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:uuid/uuid.dart';
+
 import '../auth/value_objects.dart';
+import 'errors.dart';
 import 'failures.dart';
 
 @immutable
