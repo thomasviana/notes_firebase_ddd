@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:dartz/dartz.dart';
-import 'package:notes_firebase_ddd/domain/core/errors.dart';
+import 'errors.dart';
 import 'package:uuid/uuid.dart';
 import '../auth/value_objects.dart';
 import 'failures.dart';
