@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:dartz/dartz.dart';
 import 'package:notes_firebase_ddd/domain/core/errors.dart';
+import 'package:uuid/uuid.dart';
 import '../auth/value_objects.dart';
 import 'failures.dart';
 
@@ -28,4 +29,23 @@ abstract class ValueObject<T> {
 
   @override
   int get hashCode => value.hashCode;
+}
+
+class UniqueId extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory UniqueId() {
+    return UniqueId._(
+      right(const Uuid().v1()),
+    );
+  }
+
+  factory UniqueId.fromUniqueString(String uniqueId) {
+    return UniqueId._(
+      right(uniqueId),
+    );
+  }
+
+  const UniqueId._(this.value);
 }
