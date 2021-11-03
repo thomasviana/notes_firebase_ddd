@@ -9,8 +9,10 @@ class AppWidget extends StatelessWidget {
       home: SignInPage(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light().copyWith(
-        primaryColor: Colors.green[800],
-        accentColor: Colors.blueAccent,
+        colorScheme: ThemeData.light().colorScheme.copyWith(
+              primary: Colors.green[800],
+              secondary: Colors.blueAccent,
+            ),
         inputDecorationTheme: InputDecorationTheme(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),

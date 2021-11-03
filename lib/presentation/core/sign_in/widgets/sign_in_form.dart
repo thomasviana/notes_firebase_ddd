@@ -37,9 +37,9 @@ class SignInForm extends StatelessWidget {
                     .fold(
                       (f) => f.maybeMap(
                         invalidEmail: (_) => 'Invalid Email',
-                        orElse: () => '',
+                        orElse: () => null,
                       ),
-                      (r) => '',
+                      (r) => null,
                     ),
               ),
               const SizedBox(height: 8),
