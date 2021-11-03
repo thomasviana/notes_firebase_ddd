@@ -18,6 +18,41 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   SignInFormBloc(
     this._authFacade,
   ) : super(SignInFormState.initial()) {
+    Stream<SignInFormState> _performActionOnAuthFacadeWithEmailAndPassword(
+      Future<Either<AuthFailure, Unit>> Function({
+        required EmailAddress emailAddress,
+        required Password password,
+      })
+          forwardedCall,
+    ) async* {
+      Either<AuthFailure, Unit> failureOrSuccess;
+
+      final isEmailValid = state.emailAddress.isValid();
+      final isPasswordValid = state.password.isValid();
+
+      if (isEmailValid && isPasswordValid) {
+        emit(state.copyWith(
+          isSubmitting: true,
+          authFailureOrSuccessOption: none(),
+        ));
+
+        failureOrSuccess = await forwardedCall(
+          emailAddress: state.emailAddress,
+          password: state.password,
+        );
+
+        emit(state.copyWith(
+          isSubmitting: false,
+          authFailureOrSuccessOption: some(failureOrSuccess),
+        ));
+      }
+
+      emit(state.copyWith(
+        showErrorMessages: true,
+        authFailureOrSuccessOption: none(),
+      ));
+    }
+
     on<SignInFormEvent>((event, emit) async {
       event.map(
         emailChanged: (e) async* {
@@ -32,8 +67,16 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
             authFailureOrSuccessOption: none(),
           ));
         },
-        registerWithEmailAndPasswordPressed: (e) async* {},
-        signInWithEmailAndPasswordPressed: (e) async* {},
+        registerWithEmailAndPasswordPressed: (e) async* {
+          _performActionOnAuthFacadeWithEmailAndPassword(
+            _authFacade.registerWithEmailAndPassword,
+          );
+        },
+        signInWithEmailAndPasswordPressed: (e) async* {
+          _performActionOnAuthFacadeWithEmailAndPassword(
+            _authFacade.signInWithEmailAndPassword,
+          );
+        },
         signInWithGooglePressed: (e) async* {
           emit(state.copyWith(
             isSubmitting: true,
