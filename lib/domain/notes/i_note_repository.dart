@@ -13,7 +13,7 @@ abstract class INoteRepository {
 
   Stream<Either<NoteFailure, KtList<Note>>> watchAll();
   Stream<Either<NoteFailure, KtList<Note>>> watchUncompleted();
-  Stream<Either<NoteFailure, Unit>> create(Note note);
-  Stream<Either<NoteFailure, Unit>> update(Note note);
-  Stream<Either<NoteFailure, Unit>> delete(Note note);
+  Future<Either<NoteFailure, Unit>> create(Note note);
+  Future<Either<NoteFailure, Unit>> update(Note note);
+  Future<Either<NoteFailure, Unit>> delete(Note note);
 }
