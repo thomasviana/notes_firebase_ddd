@@ -20,6 +20,10 @@ class _$NoteFailureTearOff {
   _Unexpected<T> unexpected<T>() {
     return _Unexpected<T>();
   }
+
+  _InsufficientPermission<T> insufficientPermission<T>() {
+    return _InsufficientPermission<T>();
+  }
 }
 
 /// @nodoc
@@ -30,32 +34,39 @@ mixin _$NoteFailure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() insufficientPermission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected<T> value) unexpected,
+    required TResult Function(_InsufficientPermission<T> value)
+        insufficientPermission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected<T> value)? unexpected,
+    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected<T> value)? unexpected,
+    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,6 +137,7 @@ class _$_Unexpected<T> with DiagnosticableTreeMixin implements _Unexpected<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() insufficientPermission,
   }) {
     return unexpected();
   }
@@ -134,6 +146,7 @@ class _$_Unexpected<T> with DiagnosticableTreeMixin implements _Unexpected<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
   }) {
     return unexpected?.call();
   }
@@ -142,6 +155,7 @@ class _$_Unexpected<T> with DiagnosticableTreeMixin implements _Unexpected<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -154,6 +168,8 @@ class _$_Unexpected<T> with DiagnosticableTreeMixin implements _Unexpected<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected<T> value) unexpected,
+    required TResult Function(_InsufficientPermission<T> value)
+        insufficientPermission,
   }) {
     return unexpected(this);
   }
@@ -162,6 +178,7 @@ class _$_Unexpected<T> with DiagnosticableTreeMixin implements _Unexpected<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected<T> value)? unexpected,
+    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
   }) {
     return unexpected?.call(this);
   }
@@ -170,6 +187,7 @@ class _$_Unexpected<T> with DiagnosticableTreeMixin implements _Unexpected<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected<T> value)? unexpected,
+    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -181,4 +199,122 @@ class _$_Unexpected<T> with DiagnosticableTreeMixin implements _Unexpected<T> {
 
 abstract class _Unexpected<T> implements NoteFailure<T> {
   const factory _Unexpected() = _$_Unexpected<T>;
+}
+
+/// @nodoc
+abstract class _$InsufficientPermissionCopyWith<T, $Res> {
+  factory _$InsufficientPermissionCopyWith(_InsufficientPermission<T> value,
+          $Res Function(_InsufficientPermission<T>) then) =
+      __$InsufficientPermissionCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InsufficientPermissionCopyWithImpl<T, $Res>
+    extends _$NoteFailureCopyWithImpl<T, $Res>
+    implements _$InsufficientPermissionCopyWith<T, $Res> {
+  __$InsufficientPermissionCopyWithImpl(_InsufficientPermission<T> _value,
+      $Res Function(_InsufficientPermission<T>) _then)
+      : super(_value, (v) => _then(v as _InsufficientPermission<T>));
+
+  @override
+  _InsufficientPermission<T> get _value =>
+      super._value as _InsufficientPermission<T>;
+}
+
+/// @nodoc
+
+class _$_InsufficientPermission<T>
+    with DiagnosticableTreeMixin
+    implements _InsufficientPermission<T> {
+  const _$_InsufficientPermission();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NoteFailure<$T>.insufficientPermission()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NoteFailure<$T>.insufficientPermission'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _InsufficientPermission<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() insufficientPermission,
+  }) {
+    return insufficientPermission();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
+  }) {
+    return insufficientPermission?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
+    required TResult orElse(),
+  }) {
+    if (insufficientPermission != null) {
+      return insufficientPermission();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected<T> value) unexpected,
+    required TResult Function(_InsufficientPermission<T> value)
+        insufficientPermission,
+  }) {
+    return insufficientPermission(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected<T> value)? unexpected,
+    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
+  }) {
+    return insufficientPermission?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected<T> value)? unexpected,
+    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
+    required TResult orElse(),
+  }) {
+    if (insufficientPermission != null) {
+      return insufficientPermission(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InsufficientPermission<T> implements NoteFailure<T> {
+  const factory _InsufficientPermission() = _$_InsufficientPermission<T>;
 }
