@@ -11,6 +11,7 @@ environment:
 dependencies:
   another_flushbar: ^1.10.24
   auto_route: ^3.0.4
+  cloud_firestore: ^2.5.4
   cupertino_icons: ^1.0.2
   dartz: ^0.10.0
   firebase_auth: ^3.1.4
@@ -22,6 +23,7 @@ dependencies:
   get_it: ^7.2.0
   google_sign_in: ^5.2.1
   injectable: ^1.5.0
+  json_annotation: ^4.1.0
   kt_dart: ^0.10.0
   uuid: ^3.0.5
 
@@ -32,6 +34,7 @@ dev_dependencies:
     sdk: flutter
   freezed: ^0.15.0+1
   injectable_generator: ^1.5.2
+  json_serializable: ^5.0.1
   lint: ^1.7.2
 
 flutter:
