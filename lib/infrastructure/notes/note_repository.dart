@@ -34,7 +34,7 @@ class NoteRepository implements INoteRepository {
                 .toImmutableList(),
           ),
         )
-        .onErrorReturnWith((e) {
+        .onErrorReturnWith((e, _) {
       if (e is PlatformException && e.message!.contains('PERMISSION_DENIED')) {
         return left(const NoteFailure.insufficientPermission());
       } else {
@@ -56,7 +56,7 @@ class NoteRepository implements INoteRepository {
             .where((note) =>
                 note.todos.getOrCrash().any((todoItem) => !todoItem.done))
             .toImmutableList()))
-        .onErrorReturnWith((e) {
+        .onErrorReturnWith((e, _) {
       if (e is PlatformException && e.message!.contains('PERMISSION_DENIED')) {
         return left(const NoteFailure.insufficientPermission());
       } else {

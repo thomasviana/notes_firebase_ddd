@@ -24,8 +24,8 @@ class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
     this._iNoteRepository,
     this._noteStreamSubscription,
   ) : super(const _Initial()) {
-    on<NoteWatcherEvent>((event, emit) {
-      event.map(
+    on<NoteWatcherEvent>((event, emit) async {
+      await event.map(
         watchAllStarted: (e) async {
           emit(const NoteWatcherState.loadInProgress());
           await _noteStreamSubscription.cancel();

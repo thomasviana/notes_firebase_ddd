@@ -10,7 +10,6 @@ import '../../../domain/notes/i_note_repository.dart';
 import '../../../domain/notes/note.dart';
 import '../../../domain/notes/note_failure.dart';
 import '../../../domain/notes/value_objects.dart';
-import '../../../infrastructure/notes/note_dtos.dart';
 import '../../../presentation/notes/note_form.dart/misc/todo_item_presentation_classes.dart';
 
 part 'note_form_bloc.freezed.dart';
