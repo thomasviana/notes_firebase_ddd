@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
+
 import 'auth_failure.dart';
 import 'user_entity.dart';
-
 import 'value_objects.dart';
 
 abstract class IAuthFacade {
