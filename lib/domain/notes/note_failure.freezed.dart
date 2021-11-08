@@ -129,7 +129,6 @@ class _$_Unexpected with DiagnosticableTreeMixin implements _Unexpected {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    // ignore: avoid_single_cascade_in_expression_statements
     properties..add(DiagnosticsProperty('type', 'NoteFailure.unexpected'));
   }
 
