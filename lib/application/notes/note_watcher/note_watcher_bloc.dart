@@ -18,17 +18,18 @@ part 'note_watcher_state.dart';
 class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
   final INoteRepository _iNoteRepository;
 
-  StreamSubscription<Either<NoteFailure, KtList<Note>>> _noteStreamSubscription;
+  StreamSubscription<Either<NoteFailure, KtList<Note>>>?
+      _noteStreamSubscription;
 
   NoteWatcherBloc(
     this._iNoteRepository,
-    this._noteStreamSubscription,
   ) : super(const _Initial()) {
+    // ignore: void_checks
     on<NoteWatcherEvent>((event, emit) async {
       await event.map(
         watchAllStarted: (e) async {
           emit(const NoteWatcherState.loadInProgress());
-          await _noteStreamSubscription.cancel();
+          await _noteStreamSubscription?.cancel();
           _noteStreamSubscription = _iNoteRepository.watchAll().listen(
                 (failureOrNotes) =>
                     add(NoteWatcherEvent.notesReceived(failureOrNotes)),
@@ -36,7 +37,7 @@ class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
         },
         watchUncompleteStarted: (e) async {
           emit(const NoteWatcherState.loadInProgress());
-          await _noteStreamSubscription.cancel();
+          await _noteStreamSubscription?.cancel();
           _noteStreamSubscription = _iNoteRepository.watchUncompleted().listen(
                 (failureOrNotes) =>
                     add(NoteWatcherEvent.notesReceived(failureOrNotes)),
@@ -54,7 +55,7 @@ class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
 
   @override
   Future<void> close() async {
-    await _noteStreamSubscription.cancel();
+    await _noteStreamSubscription?.cancel();
     return super.close();
   }
 }

@@ -251,7 +251,7 @@ class _$NoteActorStateTearOff {
     return const _ActionInProgress();
   }
 
-  _DeleteFailure deleteFailure(NoteFailure<dynamic> noteFailure) {
+  _DeleteFailure deleteFailure(NoteFailure noteFailure) {
     return _DeleteFailure(
       noteFailure,
     );
@@ -271,7 +271,7 @@ mixin _$NoteActorState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(NoteFailure<dynamic> noteFailure) deleteFailure,
+    required TResult Function(NoteFailure noteFailure) deleteFailure,
     required TResult Function() deleteSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -279,7 +279,7 @@ mixin _$NoteActorState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(NoteFailure<dynamic> noteFailure)? deleteFailure,
+    TResult Function(NoteFailure noteFailure)? deleteFailure,
     TResult Function()? deleteSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -287,7 +287,7 @@ mixin _$NoteActorState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(NoteFailure<dynamic> noteFailure)? deleteFailure,
+    TResult Function(NoteFailure noteFailure)? deleteFailure,
     TResult Function()? deleteSuccess,
     required TResult orElse(),
   }) =>
@@ -376,7 +376,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(NoteFailure<dynamic> noteFailure) deleteFailure,
+    required TResult Function(NoteFailure noteFailure) deleteFailure,
     required TResult Function() deleteSuccess,
   }) {
     return initial();
@@ -387,7 +387,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(NoteFailure<dynamic> noteFailure)? deleteFailure,
+    TResult Function(NoteFailure noteFailure)? deleteFailure,
     TResult Function()? deleteSuccess,
   }) {
     return initial?.call();
@@ -398,7 +398,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(NoteFailure<dynamic> noteFailure)? deleteFailure,
+    TResult Function(NoteFailure noteFailure)? deleteFailure,
     TResult Function()? deleteSuccess,
     required TResult orElse(),
   }) {
@@ -493,7 +493,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(NoteFailure<dynamic> noteFailure) deleteFailure,
+    required TResult Function(NoteFailure noteFailure) deleteFailure,
     required TResult Function() deleteSuccess,
   }) {
     return actionInProgress();
@@ -504,7 +504,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(NoteFailure<dynamic> noteFailure)? deleteFailure,
+    TResult Function(NoteFailure noteFailure)? deleteFailure,
     TResult Function()? deleteSuccess,
   }) {
     return actionInProgress?.call();
@@ -515,7 +515,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(NoteFailure<dynamic> noteFailure)? deleteFailure,
+    TResult Function(NoteFailure noteFailure)? deleteFailure,
     TResult Function()? deleteSuccess,
     required TResult orElse(),
   }) {
@@ -572,9 +572,9 @@ abstract class _$DeleteFailureCopyWith<$Res> {
   factory _$DeleteFailureCopyWith(
           _DeleteFailure value, $Res Function(_DeleteFailure) then) =
       __$DeleteFailureCopyWithImpl<$Res>;
-  $Res call({NoteFailure<dynamic> noteFailure});
+  $Res call({NoteFailure noteFailure});
 
-  $NoteFailureCopyWith<dynamic, $Res> get noteFailure;
+  $NoteFailureCopyWith<$Res> get noteFailure;
 }
 
 /// @nodoc
@@ -596,13 +596,13 @@ class __$DeleteFailureCopyWithImpl<$Res>
       noteFailure == freezed
           ? _value.noteFailure
           : noteFailure // ignore: cast_nullable_to_non_nullable
-              as NoteFailure<dynamic>,
+              as NoteFailure,
     ));
   }
 
   @override
-  $NoteFailureCopyWith<dynamic, $Res> get noteFailure {
-    return $NoteFailureCopyWith<dynamic, $Res>(_value.noteFailure, (value) {
+  $NoteFailureCopyWith<$Res> get noteFailure {
+    return $NoteFailureCopyWith<$Res>(_value.noteFailure, (value) {
       return _then(_value.copyWith(noteFailure: value));
     });
   }
@@ -614,7 +614,7 @@ class _$_DeleteFailure implements _DeleteFailure {
   const _$_DeleteFailure(this.noteFailure);
 
   @override
-  final NoteFailure<dynamic> noteFailure;
+  final NoteFailure noteFailure;
 
   @override
   String toString() {
@@ -643,7 +643,7 @@ class _$_DeleteFailure implements _DeleteFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(NoteFailure<dynamic> noteFailure) deleteFailure,
+    required TResult Function(NoteFailure noteFailure) deleteFailure,
     required TResult Function() deleteSuccess,
   }) {
     return deleteFailure(noteFailure);
@@ -654,7 +654,7 @@ class _$_DeleteFailure implements _DeleteFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(NoteFailure<dynamic> noteFailure)? deleteFailure,
+    TResult Function(NoteFailure noteFailure)? deleteFailure,
     TResult Function()? deleteSuccess,
   }) {
     return deleteFailure?.call(noteFailure);
@@ -665,7 +665,7 @@ class _$_DeleteFailure implements _DeleteFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(NoteFailure<dynamic> noteFailure)? deleteFailure,
+    TResult Function(NoteFailure noteFailure)? deleteFailure,
     TResult Function()? deleteSuccess,
     required TResult orElse(),
   }) {
@@ -714,10 +714,9 @@ class _$_DeleteFailure implements _DeleteFailure {
 }
 
 abstract class _DeleteFailure implements NoteActorState {
-  const factory _DeleteFailure(NoteFailure<dynamic> noteFailure) =
-      _$_DeleteFailure;
+  const factory _DeleteFailure(NoteFailure noteFailure) = _$_DeleteFailure;
 
-  NoteFailure<dynamic> get noteFailure;
+  NoteFailure get noteFailure;
   @JsonKey(ignore: true)
   _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -766,7 +765,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(NoteFailure<dynamic> noteFailure) deleteFailure,
+    required TResult Function(NoteFailure noteFailure) deleteFailure,
     required TResult Function() deleteSuccess,
   }) {
     return deleteSuccess();
@@ -777,7 +776,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(NoteFailure<dynamic> noteFailure)? deleteFailure,
+    TResult Function(NoteFailure noteFailure)? deleteFailure,
     TResult Function()? deleteSuccess,
   }) {
     return deleteSuccess?.call();
@@ -788,7 +787,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(NoteFailure<dynamic> noteFailure)? deleteFailure,
+    TResult Function(NoteFailure noteFailure)? deleteFailure,
     TResult Function()? deleteSuccess,
     required TResult orElse(),
   }) {

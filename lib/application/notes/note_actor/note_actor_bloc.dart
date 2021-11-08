@@ -19,8 +19,8 @@ class NoteActorBloc extends Bloc<NoteActorEvent, NoteActorState> {
       emit(const NoteActorState.actionInProgress());
       final possibleFailure = await _iNoteRepository.delete(event.note);
       possibleFailure.fold(
-        (f) => NoteActorState.deleteFailure(f),
-        (_) => const NoteActorState.deleteSuccess(),
+        (f) => emit(NoteActorState.deleteFailure(f)),
+        (_) => emit(const NoteActorState.deleteSuccess()),
       );
     });
   }

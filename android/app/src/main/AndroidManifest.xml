@@ -3,7 +3,8 @@
    <application
         android:label="notes_firebase_ddd"
         android:icon="@mipmap/ic_launcher">
-        android:usesCleartextTraffic="true"
+        android: usesCleartextTraffic = "true"
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

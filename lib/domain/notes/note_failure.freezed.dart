@@ -17,16 +17,16 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$NoteFailureTearOff {
   const _$NoteFailureTearOff();
 
-  _Unexpected<T> unexpected<T>() {
-    return _Unexpected<T>();
+  _Unexpected unexpected() {
+    return const _Unexpected();
   }
 
-  _InsufficientPermission<T> insufficientPermission<T>() {
-    return _InsufficientPermission<T>();
+  _InsufficientPermission insufficientPermission() {
+    return const _InsufficientPermission();
   }
 
-  _UnableToUpdate<T> unableToUpdate<T>() {
-    return _UnableToUpdate<T>();
+  _UnableToUpdate unableToUpdate() {
+    return const _UnableToUpdate();
   }
 }
 
@@ -34,7 +34,7 @@ class _$NoteFailureTearOff {
 const $NoteFailure = _$NoteFailureTearOff();
 
 /// @nodoc
-mixin _$NoteFailure<T> {
+mixin _$NoteFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
@@ -59,85 +59,84 @@ mixin _$NoteFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Unexpected<T> value) unexpected,
-    required TResult Function(_InsufficientPermission<T> value)
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_InsufficientPermission value)
         insufficientPermission,
-    required TResult Function(_UnableToUpdate<T> value) unableToUpdate,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected<T> value)? unexpected,
-    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
-    TResult Function(_UnableToUpdate<T> value)? unableToUpdate,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Unexpected<T> value)? unexpected,
-    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
-    TResult Function(_UnableToUpdate<T> value)? unableToUpdate,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NoteFailureCopyWith<T, $Res> {
+abstract class $NoteFailureCopyWith<$Res> {
   factory $NoteFailureCopyWith(
-          NoteFailure<T> value, $Res Function(NoteFailure<T>) then) =
-      _$NoteFailureCopyWithImpl<T, $Res>;
+          NoteFailure value, $Res Function(NoteFailure) then) =
+      _$NoteFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NoteFailureCopyWithImpl<T, $Res>
-    implements $NoteFailureCopyWith<T, $Res> {
+class _$NoteFailureCopyWithImpl<$Res> implements $NoteFailureCopyWith<$Res> {
   _$NoteFailureCopyWithImpl(this._value, this._then);
 
-  final NoteFailure<T> _value;
+  final NoteFailure _value;
   // ignore: unused_field
-  final $Res Function(NoteFailure<T>) _then;
+  final $Res Function(NoteFailure) _then;
 }
 
 /// @nodoc
-abstract class _$UnexpectedCopyWith<T, $Res> {
+abstract class _$UnexpectedCopyWith<$Res> {
   factory _$UnexpectedCopyWith(
-          _Unexpected<T> value, $Res Function(_Unexpected<T>) then) =
-      __$UnexpectedCopyWithImpl<T, $Res>;
+          _Unexpected value, $Res Function(_Unexpected) then) =
+      __$UnexpectedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnexpectedCopyWithImpl<T, $Res>
-    extends _$NoteFailureCopyWithImpl<T, $Res>
-    implements _$UnexpectedCopyWith<T, $Res> {
+class __$UnexpectedCopyWithImpl<$Res> extends _$NoteFailureCopyWithImpl<$Res>
+    implements _$UnexpectedCopyWith<$Res> {
   __$UnexpectedCopyWithImpl(
-      _Unexpected<T> _value, $Res Function(_Unexpected<T>) _then)
-      : super(_value, (v) => _then(v as _Unexpected<T>));
+      _Unexpected _value, $Res Function(_Unexpected) _then)
+      : super(_value, (v) => _then(v as _Unexpected));
 
   @override
-  _Unexpected<T> get _value => super._value as _Unexpected<T>;
+  _Unexpected get _value => super._value as _Unexpected;
 }
 
 /// @nodoc
 
-class _$_Unexpected<T> with DiagnosticableTreeMixin implements _Unexpected<T> {
+class _$_Unexpected with DiagnosticableTreeMixin implements _Unexpected {
   const _$_Unexpected();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NoteFailure<$T>.unexpected()';
+    return 'NoteFailure.unexpected()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'NoteFailure<$T>.unexpected'));
+    // ignore: avoid_single_cascade_in_expression_statements
+    properties..add(DiagnosticsProperty('type', 'NoteFailure.unexpected'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Unexpected<T>);
+        (other.runtimeType == runtimeType && other is _Unexpected);
   }
 
   @override
@@ -180,10 +179,10 @@ class _$_Unexpected<T> with DiagnosticableTreeMixin implements _Unexpected<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Unexpected<T> value) unexpected,
-    required TResult Function(_InsufficientPermission<T> value)
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_InsufficientPermission value)
         insufficientPermission,
-    required TResult Function(_UnableToUpdate<T> value) unableToUpdate,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
   }) {
     return unexpected(this);
   }
@@ -191,9 +190,9 @@ class _$_Unexpected<T> with DiagnosticableTreeMixin implements _Unexpected<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected<T> value)? unexpected,
-    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
-    TResult Function(_UnableToUpdate<T> value)? unableToUpdate,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
   }) {
     return unexpected?.call(this);
   }
@@ -201,9 +200,9 @@ class _$_Unexpected<T> with DiagnosticableTreeMixin implements _Unexpected<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Unexpected<T> value)? unexpected,
-    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
-    TResult Function(_UnableToUpdate<T> value)? unableToUpdate,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -213,55 +212,52 @@ class _$_Unexpected<T> with DiagnosticableTreeMixin implements _Unexpected<T> {
   }
 }
 
-abstract class _Unexpected<T> implements NoteFailure<T> {
-  const factory _Unexpected() = _$_Unexpected<T>;
+abstract class _Unexpected implements NoteFailure {
+  const factory _Unexpected() = _$_Unexpected;
 }
 
 /// @nodoc
-abstract class _$InsufficientPermissionCopyWith<T, $Res> {
-  factory _$InsufficientPermissionCopyWith(_InsufficientPermission<T> value,
-          $Res Function(_InsufficientPermission<T>) then) =
-      __$InsufficientPermissionCopyWithImpl<T, $Res>;
+abstract class _$InsufficientPermissionCopyWith<$Res> {
+  factory _$InsufficientPermissionCopyWith(_InsufficientPermission value,
+          $Res Function(_InsufficientPermission) then) =
+      __$InsufficientPermissionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InsufficientPermissionCopyWithImpl<T, $Res>
-    extends _$NoteFailureCopyWithImpl<T, $Res>
-    implements _$InsufficientPermissionCopyWith<T, $Res> {
-  __$InsufficientPermissionCopyWithImpl(_InsufficientPermission<T> _value,
-      $Res Function(_InsufficientPermission<T>) _then)
-      : super(_value, (v) => _then(v as _InsufficientPermission<T>));
+class __$InsufficientPermissionCopyWithImpl<$Res>
+    extends _$NoteFailureCopyWithImpl<$Res>
+    implements _$InsufficientPermissionCopyWith<$Res> {
+  __$InsufficientPermissionCopyWithImpl(_InsufficientPermission _value,
+      $Res Function(_InsufficientPermission) _then)
+      : super(_value, (v) => _then(v as _InsufficientPermission));
 
   @override
-  _InsufficientPermission<T> get _value =>
-      super._value as _InsufficientPermission<T>;
+  _InsufficientPermission get _value => super._value as _InsufficientPermission;
 }
 
 /// @nodoc
 
-class _$_InsufficientPermission<T>
+class _$_InsufficientPermission
     with DiagnosticableTreeMixin
-    implements _InsufficientPermission<T> {
+    implements _InsufficientPermission {
   const _$_InsufficientPermission();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NoteFailure<$T>.insufficientPermission()';
+    return 'NoteFailure.insufficientPermission()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty(
-          'type', 'NoteFailure<$T>.insufficientPermission'));
+      ..add(DiagnosticsProperty('type', 'NoteFailure.insufficientPermission'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _InsufficientPermission<T>);
+        (other.runtimeType == runtimeType && other is _InsufficientPermission);
   }
 
   @override
@@ -304,10 +300,10 @@ class _$_InsufficientPermission<T>
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Unexpected<T> value) unexpected,
-    required TResult Function(_InsufficientPermission<T> value)
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_InsufficientPermission value)
         insufficientPermission,
-    required TResult Function(_UnableToUpdate<T> value) unableToUpdate,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
   }) {
     return insufficientPermission(this);
   }
@@ -315,9 +311,9 @@ class _$_InsufficientPermission<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected<T> value)? unexpected,
-    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
-    TResult Function(_UnableToUpdate<T> value)? unableToUpdate,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
   }) {
     return insufficientPermission?.call(this);
   }
@@ -325,9 +321,9 @@ class _$_InsufficientPermission<T>
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Unexpected<T> value)? unexpected,
-    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
-    TResult Function(_UnableToUpdate<T> value)? unableToUpdate,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
     required TResult orElse(),
   }) {
     if (insufficientPermission != null) {
@@ -337,52 +333,51 @@ class _$_InsufficientPermission<T>
   }
 }
 
-abstract class _InsufficientPermission<T> implements NoteFailure<T> {
-  const factory _InsufficientPermission() = _$_InsufficientPermission<T>;
+abstract class _InsufficientPermission implements NoteFailure {
+  const factory _InsufficientPermission() = _$_InsufficientPermission;
 }
 
 /// @nodoc
-abstract class _$UnableToUpdateCopyWith<T, $Res> {
+abstract class _$UnableToUpdateCopyWith<$Res> {
   factory _$UnableToUpdateCopyWith(
-          _UnableToUpdate<T> value, $Res Function(_UnableToUpdate<T>) then) =
-      __$UnableToUpdateCopyWithImpl<T, $Res>;
+          _UnableToUpdate value, $Res Function(_UnableToUpdate) then) =
+      __$UnableToUpdateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnableToUpdateCopyWithImpl<T, $Res>
-    extends _$NoteFailureCopyWithImpl<T, $Res>
-    implements _$UnableToUpdateCopyWith<T, $Res> {
+class __$UnableToUpdateCopyWithImpl<$Res>
+    extends _$NoteFailureCopyWithImpl<$Res>
+    implements _$UnableToUpdateCopyWith<$Res> {
   __$UnableToUpdateCopyWithImpl(
-      _UnableToUpdate<T> _value, $Res Function(_UnableToUpdate<T>) _then)
-      : super(_value, (v) => _then(v as _UnableToUpdate<T>));
+      _UnableToUpdate _value, $Res Function(_UnableToUpdate) _then)
+      : super(_value, (v) => _then(v as _UnableToUpdate));
 
   @override
-  _UnableToUpdate<T> get _value => super._value as _UnableToUpdate<T>;
+  _UnableToUpdate get _value => super._value as _UnableToUpdate;
 }
 
 /// @nodoc
 
-class _$_UnableToUpdate<T>
+class _$_UnableToUpdate
     with DiagnosticableTreeMixin
-    implements _UnableToUpdate<T> {
+    implements _UnableToUpdate {
   const _$_UnableToUpdate();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NoteFailure<$T>.unableToUpdate()';
+    return 'NoteFailure.unableToUpdate()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'NoteFailure<$T>.unableToUpdate'));
+    properties..add(DiagnosticsProperty('type', 'NoteFailure.unableToUpdate'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _UnableToUpdate<T>);
+        (other.runtimeType == runtimeType && other is _UnableToUpdate);
   }
 
   @override
@@ -425,10 +420,10 @@ class _$_UnableToUpdate<T>
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Unexpected<T> value) unexpected,
-    required TResult Function(_InsufficientPermission<T> value)
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_InsufficientPermission value)
         insufficientPermission,
-    required TResult Function(_UnableToUpdate<T> value) unableToUpdate,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
   }) {
     return unableToUpdate(this);
   }
@@ -436,9 +431,9 @@ class _$_UnableToUpdate<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected<T> value)? unexpected,
-    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
-    TResult Function(_UnableToUpdate<T> value)? unableToUpdate,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
   }) {
     return unableToUpdate?.call(this);
   }
@@ -446,9 +441,9 @@ class _$_UnableToUpdate<T>
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Unexpected<T> value)? unexpected,
-    TResult Function(_InsufficientPermission<T> value)? insufficientPermission,
-    TResult Function(_UnableToUpdate<T> value)? unableToUpdate,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
     required TResult orElse(),
   }) {
     if (unableToUpdate != null) {
@@ -458,6 +453,6 @@ class _$_UnableToUpdate<T>
   }
 }
 
-abstract class _UnableToUpdate<T> implements NoteFailure<T> {
-  const factory _UnableToUpdate() = _$_UnableToUpdate<T>;
+abstract class _UnableToUpdate implements NoteFailure {
+  const factory _UnableToUpdate() = _$_UnableToUpdate;
 }

@@ -1,12 +1,14 @@
-import 'package:another_flushbar/flushbar_helper.dart';
+// ignore: implementation_imports
 import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:flutter/material.dart';
-import '../../../application/auth/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../application/auth/auth_bloc.dart';
 import '../../../application/notes/note_actor/note_actor_bloc.dart';
 import '../../../application/notes/note_watcher/note_watcher_bloc.dart';
 import '../../../injection.dart';
 import '../../routes/app_router.dart';
+import 'widgets/notes_overview_body_widget.dart';
 
 class NotesOverviewPage extends StatelessWidget {
   @override
@@ -67,7 +69,7 @@ class NotesOverviewPage extends StatelessWidget {
               )
             ],
           ),
-          body: Container(),
+          body: NotesOverviewBody(),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
               // TODO: Navigate to NoteFormPage

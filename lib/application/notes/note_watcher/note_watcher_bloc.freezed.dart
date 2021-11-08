@@ -498,7 +498,7 @@ class _$NoteWatcherStateTearOff {
     );
   }
 
-  _LoadFailure loadFailure(NoteFailure<dynamic> noteFailure) {
+  _LoadFailure loadFailure(NoteFailure noteFailure) {
     return _LoadFailure(
       noteFailure,
     );
@@ -515,7 +515,7 @@ mixin _$NoteWatcherState {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<Note> notes) loadSucces,
-    required TResult Function(NoteFailure<dynamic> noteFailure) loadFailure,
+    required TResult Function(NoteFailure noteFailure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -523,7 +523,7 @@ mixin _$NoteWatcherState {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Note> notes)? loadSucces,
-    TResult Function(NoteFailure<dynamic> noteFailure)? loadFailure,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -531,7 +531,7 @@ mixin _$NoteWatcherState {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Note> notes)? loadSucces,
-    TResult Function(NoteFailure<dynamic> noteFailure)? loadFailure,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -620,7 +620,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<Note> notes) loadSucces,
-    required TResult Function(NoteFailure<dynamic> noteFailure) loadFailure,
+    required TResult Function(NoteFailure noteFailure) loadFailure,
   }) {
     return initial();
   }
@@ -631,7 +631,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Note> notes)? loadSucces,
-    TResult Function(NoteFailure<dynamic> noteFailure)? loadFailure,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
   }) {
     return initial?.call();
   }
@@ -642,7 +642,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Note> notes)? loadSucces,
-    TResult Function(NoteFailure<dynamic> noteFailure)? loadFailure,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -737,7 +737,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<Note> notes) loadSucces,
-    required TResult Function(NoteFailure<dynamic> noteFailure) loadFailure,
+    required TResult Function(NoteFailure noteFailure) loadFailure,
   }) {
     return loadInProgress();
   }
@@ -748,7 +748,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Note> notes)? loadSucces,
-    TResult Function(NoteFailure<dynamic> noteFailure)? loadFailure,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
   }) {
     return loadInProgress?.call();
   }
@@ -759,7 +759,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Note> notes)? loadSucces,
-    TResult Function(NoteFailure<dynamic> noteFailure)? loadFailure,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -877,7 +877,7 @@ class _$_LoadSucces implements _LoadSucces {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<Note> notes) loadSucces,
-    required TResult Function(NoteFailure<dynamic> noteFailure) loadFailure,
+    required TResult Function(NoteFailure noteFailure) loadFailure,
   }) {
     return loadSucces(notes);
   }
@@ -888,7 +888,7 @@ class _$_LoadSucces implements _LoadSucces {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Note> notes)? loadSucces,
-    TResult Function(NoteFailure<dynamic> noteFailure)? loadFailure,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
   }) {
     return loadSucces?.call(notes);
   }
@@ -899,7 +899,7 @@ class _$_LoadSucces implements _LoadSucces {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Note> notes)? loadSucces,
-    TResult Function(NoteFailure<dynamic> noteFailure)? loadFailure,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSucces != null) {
@@ -960,9 +960,9 @@ abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(
           _LoadFailure value, $Res Function(_LoadFailure) then) =
       __$LoadFailureCopyWithImpl<$Res>;
-  $Res call({NoteFailure<dynamic> noteFailure});
+  $Res call({NoteFailure noteFailure});
 
-  $NoteFailureCopyWith<dynamic, $Res> get noteFailure;
+  $NoteFailureCopyWith<$Res> get noteFailure;
 }
 
 /// @nodoc
@@ -984,13 +984,13 @@ class __$LoadFailureCopyWithImpl<$Res>
       noteFailure == freezed
           ? _value.noteFailure
           : noteFailure // ignore: cast_nullable_to_non_nullable
-              as NoteFailure<dynamic>,
+              as NoteFailure,
     ));
   }
 
   @override
-  $NoteFailureCopyWith<dynamic, $Res> get noteFailure {
-    return $NoteFailureCopyWith<dynamic, $Res>(_value.noteFailure, (value) {
+  $NoteFailureCopyWith<$Res> get noteFailure {
+    return $NoteFailureCopyWith<$Res>(_value.noteFailure, (value) {
       return _then(_value.copyWith(noteFailure: value));
     });
   }
@@ -1002,7 +1002,7 @@ class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.noteFailure);
 
   @override
-  final NoteFailure<dynamic> noteFailure;
+  final NoteFailure noteFailure;
 
   @override
   String toString() {
@@ -1032,7 +1032,7 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<Note> notes) loadSucces,
-    required TResult Function(NoteFailure<dynamic> noteFailure) loadFailure,
+    required TResult Function(NoteFailure noteFailure) loadFailure,
   }) {
     return loadFailure(noteFailure);
   }
@@ -1043,7 +1043,7 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Note> notes)? loadSucces,
-    TResult Function(NoteFailure<dynamic> noteFailure)? loadFailure,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
   }) {
     return loadFailure?.call(noteFailure);
   }
@@ -1054,7 +1054,7 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Note> notes)? loadSucces,
-    TResult Function(NoteFailure<dynamic> noteFailure)? loadFailure,
+    TResult Function(NoteFailure noteFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
@@ -1102,9 +1102,9 @@ class _$_LoadFailure implements _LoadFailure {
 }
 
 abstract class _LoadFailure implements NoteWatcherState {
-  const factory _LoadFailure(NoteFailure<dynamic> noteFailure) = _$_LoadFailure;
+  const factory _LoadFailure(NoteFailure noteFailure) = _$_LoadFailure;
 
-  NoteFailure<dynamic> get noteFailure;
+  NoteFailure get noteFailure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

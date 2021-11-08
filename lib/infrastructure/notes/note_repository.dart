@@ -22,11 +22,11 @@ class NoteRepository implements INoteRepository {
   @override
   Stream<Either<NoteFailure, KtList<Note>>> watchAll() async* {
     final userDoc = await _firestore.userDocument();
-    userDoc.noteCollection
+    yield* userDoc.noteCollection
         .orderBy('serverTimeStamp', descending: true)
         .snapshots()
         .map(
-          (snapshot) => right(
+          (snapshot) => right<NoteFailure, KtList<Note>>(
             snapshot.docs
                 .map((doc) => NoteDTO.fromFirestore(
                         doc as DocumentSnapshot<Map<String, dynamic>>)
@@ -46,13 +46,13 @@ class NoteRepository implements INoteRepository {
   @override
   Stream<Either<NoteFailure, KtList<Note>>> watchUncompleted() async* {
     final userDoc = await _firestore.userDocument();
-    userDoc.noteCollection
+    yield* userDoc.noteCollection
         .orderBy('serverTimeStamp', descending: true)
         .snapshots()
         .map((snapshot) => snapshot.docs.map((doc) =>
             NoteDTO.fromFirestore(doc as DocumentSnapshot<Map<String, dynamic>>)
                 .toDomain()))
-        .map((notes) => right(notes
+        .map((notes) => right<NoteFailure, KtList<Note>>(notes
             .where((note) =>
                 note.todos.getOrCrash().any((todoItem) => !todoItem.done))
             .toImmutableList()))
