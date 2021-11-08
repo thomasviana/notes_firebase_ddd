@@ -3,6 +3,7 @@ import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_firebase_ddd/presentation/notes/note_form.dart/widgets/body_field_widget.dart';
 
 import '../../../application/notes/note_form/note_form_bloc.dart';
 import '../../../domain/notes/note.dart';
@@ -119,12 +120,28 @@ class NoteFormPageScaffold extends StatelessWidget {
           IconButton(
             onPressed: () {
               context.read<NoteFormBloc>().add(const NoteFormEvent.saved());
+              context.router.pop();
             },
             icon: const Icon(Icons.check),
           ),
         ],
       ),
-      body: Container(),
+      body: BlocBuilder<NoteFormBloc, NoteFormState>(
+        buildWhen: (previous, current) =>
+            previous.showErrorMessages != current.showErrorMessages,
+        builder: (context, state) {
+          return Form(
+            autovalidate: state.showErrorMessages,
+            child: SingleChildScrollView(
+              child: Column(
+                children: const [
+                  BodyField(),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }

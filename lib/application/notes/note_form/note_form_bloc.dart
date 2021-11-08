@@ -22,9 +22,9 @@ class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
   NoteFormBloc(
     this._iNoteRepository,
   ) : super(NoteFormState.initial()) {
-    on<NoteFormEvent>((event, emit) {
-      event.map(
-        initialize: (e) async* {
+    on<NoteFormEvent>((event, emit) async {
+      await event.map(
+        initialize: (e) async {
           e.initialNoteOption.fold(
               () => emit(state),
               (initialNote) => emit(state.copyWith(
@@ -32,7 +32,7 @@ class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
                     isEditing: true,
                   )));
         },
-        bodyChanged: (e) async* {
+        bodyChanged: (e) async {
           emit(
             state.copyWith(
               note: state.note.copyWith(body: NoteBody(e.bodyStr)),
@@ -40,7 +40,7 @@ class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
             ),
           );
         },
-        colorChanged: (e) async* {
+        colorChanged: (e) async {
           emit(
             state.copyWith(
               note: state.note.copyWith(color: NoteColor(e.color)),
@@ -48,7 +48,7 @@ class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
             ),
           );
         },
-        todosChanged: (e) async* {
+        todosChanged: (e) async {
           emit(
             state.copyWith(
               note: state.note.copyWith(
@@ -58,7 +58,7 @@ class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
             ),
           );
         },
-        saved: (e) async* {
+        saved: (e) async {
           Either<NoteFailure, Unit> failureOrSucces;
           emit(
             state.copyWith(
