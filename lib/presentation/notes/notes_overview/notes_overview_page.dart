@@ -1,7 +1,9 @@
 // ignore: implementation_imports
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_firebase_ddd/presentation/notes/notes_overview/widgets/uncompleted_switch.dart';
 
 import '../../../application/auth/auth_bloc.dart';
 import '../../../application/notes/note_actor/note_actor_bloc.dart';
@@ -33,25 +35,25 @@ class NotesOverviewPage extends StatelessWidget {
                   orElse: () {});
             },
           ),
-          // BlocListener<NoteActorBloc, NoteActorState>(
-          //   listener: (context, state) {
-          //     state.maybeMap(
-          //       deleteFailure: (state) {
-          //         FlushbarHelper.createError(
-          //           duration: const Duration(seconds: 5),
-          //           message: state.noteFailure.map(
-          //             unexpected: (_) =>
-          //                 'Unexpected error occured while deleting, please contact support.',
-          //             insufficientPermission: (_) =>
-          //                 'Insufficient permissions ❌',
-          //             unableToUpdate: (_) => 'Impossible error',
-          //           ),
-          //         ).show(context);
-          //       },
-          //       orElse: () {},
-          //     );
-          //   },
-          // ),
+          BlocListener<NoteActorBloc, NoteActorState>(
+            listener: (context, state) {
+              state.maybeMap(
+                deleteFailure: (state) {
+                  FlushbarHelper.createError(
+                    duration: const Duration(seconds: 5),
+                    message: state.noteFailure.map(
+                      unexpected: (_) =>
+                          'Unexpected error occured while deleting, please contact support.',
+                      insufficientPermission: (_) =>
+                          'Insufficient permissions ❌',
+                      unableToUpdate: (_) => 'Impossible error',
+                    ),
+                  ).show(context);
+                },
+                orElse: () {},
+              );
+            },
+          ),
         ],
         child: Scaffold(
           appBar: AppBar(
@@ -63,10 +65,7 @@ class NotesOverviewPage extends StatelessWidget {
               },
             ),
             actions: [
-              IconButton(
-                icon: const Icon(Icons.indeterminate_check_box),
-                onPressed: () {},
-              )
+              UncompletedSwitch(),
             ],
           ),
           body: NotesOverviewBody(),

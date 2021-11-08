@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:kt_dart/kt.dart';
-import '../../../../application/notes/note_actor/note_actor_bloc.dart';
-import '../../../../domain/notes/todo_item.dart';
 import 'package:provider/src/provider.dart';
 
+import '../../../../application/notes/note_actor/note_actor_bloc.dart';
 import '../../../../domain/notes/note.dart';
+import '../../../../domain/notes/todo_item.dart';
 
 class NoteCard extends StatelessWidget {
   final Note note;
@@ -105,6 +105,7 @@ class TodoDisplay extends StatelessWidget {
             Icons.check_box_outline_blank,
             color: Theme.of(context).disabledColor,
           ),
+        const SizedBox(width: 4),
         Text(todo.name.getOrCrash())
       ],
     );
