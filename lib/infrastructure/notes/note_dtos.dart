@@ -18,7 +18,6 @@ abstract class NoteDTO implements _$NoteDTO {
   const NoteDTO._();
 
   const factory NoteDTO({
-    // ignore: invalid_annotation_target
     @JsonKey(ignore: true) String? id,
     required String body,
     required int color,

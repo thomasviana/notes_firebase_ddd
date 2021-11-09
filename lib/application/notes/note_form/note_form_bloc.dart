@@ -59,7 +59,7 @@ class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
           );
         },
         saved: (e) async {
-          Either<NoteFailure, Unit> failureOrSucces;
+          late Either<NoteFailure, Unit> failureOrSucces;
           emit(
             state.copyWith(
               isSaving: true,
@@ -70,15 +70,15 @@ class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
             failureOrSucces = state.isEditing
                 ? await _iNoteRepository.update(state.note)
                 : await _iNoteRepository.create(state.note);
-            emit(state.copyWith(
-              isSaving: false,
-              saveFailureOrSuccessOption: some(failureOrSucces),
-            ));
+            // emit(state.copyWith(
+            //   isSaving: false,
+            //   saveFailureOrSuccessOption: none(),
+            // ));
           }
           emit(state.copyWith(
             isSaving: false,
             showErrorMessages: true,
-            saveFailureOrSuccessOption: none(),
+            saveFailureOrSuccessOption: optionOf(failureOrSucces),
           ));
         },
       );

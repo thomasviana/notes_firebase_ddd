@@ -1,9 +1,8 @@
 // ignore: implementation_imports
 import 'package:another_flushbar/flushbar_helper.dart';
-import 'package:auto_route/src/router/auto_router_x.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_firebase_ddd/domain/notes/note.dart';
 import 'package:notes_firebase_ddd/presentation/notes/notes_overview/widgets/uncompleted_switch.dart';
 
 import '../../../application/auth/auth_bloc.dart';
@@ -72,7 +71,7 @@ class NotesOverviewPage extends StatelessWidget {
           body: NotesOverviewBody(),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              context.router.push(NoteFormRoute(editedNote: null));
+              AutoRouter.of(context).push(NoteFormRoute(editedNote: null));
             },
             child: const Icon(Icons.add),
           ),

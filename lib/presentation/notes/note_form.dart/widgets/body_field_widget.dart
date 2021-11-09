@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:notes_firebase_ddd/application/notes/note_form/note_form_bloc.dart';
-import 'package:notes_firebase_ddd/domain/notes/value_objects.dart';
+import '../../../../application/notes/note_form/note_form_bloc.dart';
+import '../../../../domain/notes/value_objects.dart';
 import 'package:provider/src/provider.dart';
 
 class BodyField extends HookWidget {
