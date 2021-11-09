@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../domain/notes/note.dart';
 
 class ErrorNoteCard extends StatelessWidget {

@@ -3,6 +3,7 @@ import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'widgets/todo_list_widget.dart';
 import 'package:provider/provider.dart';
 
 import '../../../application/notes/note_form/note_form_bloc.dart';
@@ -141,6 +142,7 @@ class NoteFormPageScaffold extends StatelessWidget {
                   children: const [
                     BodyField(),
                     ColorField(),
+                    TodoList(),
                     AddTodoTile(),
                   ],
                 ),
