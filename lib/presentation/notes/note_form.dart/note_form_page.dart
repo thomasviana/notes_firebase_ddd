@@ -2,14 +2,16 @@ import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'widgets/body_field_widget.dart';
+import 'package:provider/provider.dart';
 
 import '../../../application/notes/note_form/note_form_bloc.dart';
 import '../../../domain/notes/note.dart';
 import '../../../injection.dart';
 import '../../routes/app_router.dart';
+import 'misc/todo_item_presentation_classes.dart';
+import 'widgets/add_todo_tile_widget.dart';
+import 'widgets/body_field_widget.dart';
 import 'widgets/color_field_widget.dart';
 
 class NoteFormPage extends StatelessWidget {
@@ -130,14 +132,18 @@ class NoteFormPageScaffold extends StatelessWidget {
         buildWhen: (previous, current) =>
             previous.showErrorMessages != current.showErrorMessages,
         builder: (context, state) {
-          return Form(
-            autovalidate: state.showErrorMessages,
-            child: SingleChildScrollView(
-              child: Column(
-                children: const [
-                  BodyField(),
-                  ColorField(),
-                ],
+          return ChangeNotifierProvider(
+            create: (_) => FormTodos(),
+            child: Form(
+              autovalidate: state.showErrorMessages,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: const [
+                    BodyField(),
+                    ColorField(),
+                    AddTodoTile(),
+                  ],
+                ),
               ),
             ),
           );
