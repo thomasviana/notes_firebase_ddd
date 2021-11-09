@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import '../../../../application/notes/note_watcher/note_watcher_bloc.dart';
 import 'package:provider/src/provider.dart';
+
+import '../../../../application/notes/note_watcher/note_watcher_bloc.dart';
 
 class UncompletedSwitch extends HookWidget {
   @override

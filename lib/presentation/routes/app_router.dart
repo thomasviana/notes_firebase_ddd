@@ -15,7 +15,7 @@ part 'app_router.gr.dart';
     AutoRoute(page: SplashPage, initial: true),
     AutoRoute(page: SignInPage),
     AutoRoute(page: NotesOverviewPage),
-    AutoRoute(page: NoteFormPage, fullscreenDialog: true),
+    AutoRoute(page: NoteFormPage),
   ],
 )
 // extend the generated private router

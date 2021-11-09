@@ -30,8 +30,7 @@ class _$AppRouter extends RootStackRouter {
       final args = routeData.argsAs<NoteFormRouteArgs>();
       return MaterialPageX<dynamic>(
           routeData: routeData,
-          child: NoteFormPage(key: args.key, editedNote: args.editedNote),
-          fullscreenDialog: true);
+          child: NoteFormPage(key: args.key, editedNote: args.editedNote));
     }
   };
 

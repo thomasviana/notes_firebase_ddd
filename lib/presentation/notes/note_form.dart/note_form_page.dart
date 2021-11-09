@@ -1,4 +1,5 @@
 import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
@@ -48,8 +49,8 @@ class NoteFormPage extends StatelessWidget {
               },
               (_) {
                 context.router.popUntil(
-                    // ignore: unrelated_type_equality_checks
-                    (route) => route.settings.name == NotesOverviewRoute);
+                  (route) => route.settings.name == NotesOverviewRoute.name,
+                );
               },
             ),
           );
